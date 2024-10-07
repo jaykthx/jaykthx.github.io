@@ -1,0 +1,90 @@
+body {
+    background-color: darkgrey;
+    font-family: "Noto Sans";
+}
+h1 {
+    color: cyan;
+    font-size: 50px;
+    text-align: center;
+    background-color: rgb(50,50,50);
+    border-radius: 5px;
+    vertical-align: text-top;
+    display: flexbox;
+    align-items: center;
+}
+h2 {
+    color: cyan;
+    font-size: 30px; 
+    text-align: center;
+    background-color: rgb(100,100,100);
+    border-radius: 5px;
+}
+p {
+    border-radius: 5px;
+    background-color: rgb(75,75,75);
+    padding: 30px;
+    text-align: center;
+    color: aliceblue;
+}
+img {
+    border: 2px solid rgb(165,205,205); 
+    border-radius: 5px;
+    margin: 5px;
+}
+#menuitem {
+    border-radius: 5px;
+    flex-grow: 1;
+    background-color: rgb(0, 190, 190);
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+    color: aliceblue;
+}
+#imagecontainer {
+    width: min(250px, 22%);
+    border-radius: 10px;
+    display:flex;
+    clip: auto;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    flex-shrink: 1;
+    background-color: rgb(0, 200, 200);
+    padding: 5px;
+    margin: 5px;
+    color: aliceblue;
+}
+#imagecontainer:hover{ 
+    box-shadow: 12px 12px 12px rgba(0,0,0,0.1);
+    animation: imagecontainerselect 0.5s forwards;
+}
+heading {
+    margin:5px;
+    color:aliceblue;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+#list-text {
+    color: aliceblue;
+    font-size: large;
+    margin-right: 30px;
+}
+#paragraph-box{
+    background-color: rgba(50,50,50,0.5);
+    margin: 10px;
+    box-shadow: 6px 6px 6px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    text-align: justify;
+    text-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    width: min(600px, 60%);
+}
+
+@keyframes imagecontainerselect {
+    from {background-color: rgb(0, 200, 200);}
+    to {background-color: rgb(0,150,150);}
+}
