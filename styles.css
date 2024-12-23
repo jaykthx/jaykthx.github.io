@@ -42,6 +42,7 @@ img {
     margin: 5px;
     color:white;
     font-weight: bold;
+    text-decoration: none;
 }
 #imagecontainer {
     width: min(250px, 22%);

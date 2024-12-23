@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<head>
+    <title>Testing Site</title>
+    <link rel="stylesheet" href="janken.css"></link>
+</head>
+<body>
+    <h1 style="text-align: center; color: white;">じゃんけん・Rock Paper Scissors</h1>
+    <hr>
+    <p>
+        <p id="resultLine" style="color:white; font-size: 25px;"></p>
+        <p id="winLine" style="color: white;"></p>
+        <p id="lossLine" style="color: white;"></p>
+        <br>
+        <p id="opponentLine" style="color: white;"></p>
+        <p id="yourLine" style="color: white;"></p>  
+    </p>
+    <hr>
+    <p style="display: flex; justify-content: space-evenly;">
+        <button onclick="pressHand(0)">✊️</button>
+        <button onclick="pressHand(1)">✋️</button>
+        <button onclick="pressHand(2)">✌</button>
+    </div>
+    <p style="color: grey; text-align: center;">thank you amrew for getting me to figure out the difference between 成績 and 結果 x</p>
+    <a style="display: flex; justify-content: space-evenly;" href="/index.html">Return to Home<br>ホームに戻る</a>
+    <script>
+        const winText = "あなたの勝ちです！・You win!";
+        let winCount = 0;
+        let lossCount = 0;
+        var matchResult = "";
+        let opponentHand = "";
+        let yourHand = "";
+        updateLines();
+        function updateLines(){
+            document.getElementById("yourLine").innerHTML = `あなたの選択・You chose: ${yourHand}`;
+            document.getElementById("opponentLine").innerHTML = `敵の選択・Opponent chose: ${opponentHand}`;
+            document.getElementById("lossLine").innerHTML = `負数・Losses: ${lossCount}`;
+            document.getElementById("winLine").innerHTML = `勝数・Wins: ${winCount}`;
+            document.getElementById("resultLine").innerHTML = `結果・Results: ${matchResult}`;
+        }
+        function pressHand(selectedHand){
+            yourHand = selectedHand;
+            opponentHand = Math.floor(Math.random() * 3);
+            checkHands(yourHand, opponentHand);
+            yourHand = convertIntToHand(selectedHand);
+            opponentHand = convertIntToHand(opponentHand);
+            updateLines();
+        }
+        function checkHands(yourHand, opponentHand){
+            if(yourHand == 0 && opponentHand == 2){
+                matchResult = winText;
+                winCount++;
+            }
+            else if(yourHand == 1 && opponentHand == 0){
+                matchResult = winText;
+                winCount++;
+            }
+            else if(yourHand == 2 && opponentHand == 1){
+                matchResult = winText;
+                winCount++;
+            }
+            else if(yourHand == opponentHand){
+                matchResult = "引き分けです！・You draw!";
+            }
+            else{
+                matchResult = "あなたの負けです！・You lose!";
+                lossCount++;
+            }
+        }
+        function convertIntToHand(number){
+            switch(number){
+                case 0:
+                return "✊️";
+                break;
+                case 1:
+                return "✋️";
+                break;
+                case 2:
+                return "✌";
+                break;
+            }
+        }
+    </script>
+</body>

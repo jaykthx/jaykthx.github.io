@@ -6,25 +6,63 @@
     <title>Home | jaykthx</title>
 </head>
 <body> 
+    <!-- Index MENU -->
     <h1>jaykthx</h1>
-    <!-- Index MENU -->
     <div style="display: flex;">
-        <a id="menuitem" href="/index.html">Home</a>
-        <a id="menuitem" href="/translation.html">Translations</a>
-        <a id="menuitem" href="/divamods.html">Project DIVA Mods/Tools</a>
-        <a id="menuitem" href="/about.html">About Me</a>
+        <a id="menuitem" href="/index.html" lang="en">Home<br>ホーム</a>
+        <a id="menuitem" href="/translation.html">Translations<br>翻訳したコンテンツ</a>
+        <a id="menuitem" href="/divamods.html">Project DIVA Mods/Tools<br>Project DIVAの自作MODやツール</a>
+        <a id="menuitem" href="/about.html">About Me<br>当人について</a>
+        <a id="menuitem" href="/projects/janken.html">Rock Paper Scissors<br>じゃんけんゲーム</a>
     </div>
-    <hr>
     <!-- Index MENU -->
-    <p>Welcome to my website. Please feel free to take a look around.</p>
-    <!-- Footer -->
+    <hr>
+    <p lang="en">Welcome to my website. Please feel free to take a look around.<br>私のサイトへようこそ。全部のところを見てご覧ください。</p>
     <hr>
     <div style="display:  flex; flex-direction: column; align-items: center;">
-        <text>Mommy... Mama a girl behind YOU 💜</text>
-        <img src="\Resources\Images\mama.gif" alt="mama... mama a girl behind YOU" style="width: 20%;"></img>
+        <p>
+            <button id="menuitem" type="button" onclick="myFunction()" style="border: 0px;">Press me to mama<br>押してママする</button>
+            <button id="menuitem" type="button" onclick="fakeOmikuji()"  style="border: 0px;">Fake Omikuji<br>偽物おみくじ</button>
+            <button id="menuitem" type="button" onclick="getTime()"  style="border: 0px;">Check the time<br>時間確認</button>
+        </p>
+        <text id="mamatext"></text>
+        <img id="mama" src="\Resources\Images\mama.gif" alt="mama... mama a girl behind YOU" style="width: 0%;"></img>
     </div>
-    <hr>
-    <p>Copyright* © jaykthx. Wash your hands.</p>
     <!-- Footer -->
+    <hr>
+    <p id="blurb">Copyright* © jaykthx. Wash your hands.</p>
+    <!-- Footer -->
+    <script>
+        function myFunction() {
+            document.getElementById('mama').style.width = '25%';
+            document.getElementById('mamatext').innerHTML = "Mommy... Mama.. a girl behind YOU 💜";
+        }
+        function getTime() {
+            document.getElementById('blurb').innerHTML = Date(Date.now);
+            setInterval(getTime, 1000);
+        }
+        function fakeOmikuji() {
+            let num = Math.floor(Math.random() * 100) + 1;
+            if(num > 1 & num < 15){
+                alert("Today you will poop your pants.\nConsider eating bland foods.");
+            }
+            else if (num > 15 & num < 45){
+                alert("Today you will pee in your bed.\nConsider avoiding water today.");
+            }
+            else if (num > 45 & num < 50){
+                alert("Today the train you need to take will be late.\nConsider walking.");
+            }
+            else if (num > 65 & num < 75){
+                alert("Today a child will insult you.\nProceed with caution.")
+            }
+            else if(num == 100 || num == 0){
+                alert("Today you will self destruct.\nConsider using annual leave.");
+            }
+            else{
+                alert("Today you will have good luck.\nHave a nice day.");
+            }
+        }
+    </script>
+    
 </body>
 </html>
